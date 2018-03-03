@@ -1,0 +1,28 @@
+{
+  "name": "QMask",
+  "short_name": "QMask",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "author": "Nussbaumer Projects",
+  "description": "Qtum Browser Extension",
+  "commands": {
+    "_execute_browser_action": {
+      "suggested_key": {
+        "windows": "Alt+Shift+Q",
+        "mac": "Alt+Shift+Q",
+        "chromeos": "Alt+Shift+Q",
+        "linux": "Alt+Shift+Q"
+      }
+    }
+  },
+  "browser_action": {
+    "default_icon": "images/logo_sqre.png",
+    "default_title": "QMask",
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "storage",
+    "clipboardWrite",
+    "http://localhost:8545/"
+    ]
+}
