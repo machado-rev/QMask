@@ -1,2 +1,2 @@
 # QMask
-Qantum for your web browser
+QTUM for your web browser
