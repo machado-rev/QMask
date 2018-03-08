@@ -15,11 +15,39 @@
       }
     }
   },
+  "icons": {
+    "16": "images/logo_16.png",
+    "48": "images/logo_48.png",
+    "128": "images/logo_128.png"
+  },
+  "background" : {
+    "scripts": [
+      "scripts/chromereload.js",
+      "scripts/background.js"
+    ]
+  },
   "browser_action": {
-    "default_icon": "images/logo_sqre.png",
+    "default_icon": {
+      "48": "images/logo_48.png",
+    "128": "images/logo_128.png"
+    },
     "default_title": "QMask",
     "default_popup": "popup.html"
   },
+  "content_scripts": [
+    {
+      "matches": [
+        "file://*/*",
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js": [
+        "scripts/contentscript.js"
+      ],
+      "run_at": "document_start",
+      "all_frames": true
+    }
+  ],
   "permissions": [
     "storage",
     "clipboardWrite",
