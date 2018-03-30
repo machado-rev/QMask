@@ -69,20 +69,72 @@
 
 
   <body bgcolor="#000000" text="#38ACEC" style="font-family:Helvetica Neue; font-weight:100">
-    <div><img src="../images/logo_16.png" align="top"></div>
-    <div id="container" style="margin:20px">
+
+    <head>
+      <style>
+      ul {
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+          overflow: hidden;
+          background-color: #333;
+      }
+      
+      li {
+          float: right;
+      }
+      
+      li a {
+          display: block;
+          color: #38ACEC;
+          text-align: center;
+          padding: 14px 14px;
+          text-decoration: none;
+      }
+      
+      li a:hover {
+          background-color: #111;
+      }
+      </style>
+   </head>
+          
+          
+    <ul>
+      <li><a class="active" href="#accounts">Accounts</a></li>
+      <li><a href="#logout">Settings</a></li>
+      <li><a href="#settings">About</a></li>
+      <li><a href="#about">Logout</a></li>
+      <li><img style="margin-top:10px; margin-right:30px" src="../images/logo_small.png"></li>
+    </ul>
+    
+    <div id="container" style="margin-top:10px; margin-left:10px">
+      <form action="" align="right" >
+        <button class="astext" style="background:none; border:none; margin:0; padding:0">
+        <font size="6" color="#38ACEC" style="font-family:Helvetica Neue; font-weight:100">...</font>
+        </button>
+      </form>
       <div>
-        <img src="../images/logo_48.png" align="left" style="margin-top:20px">
+        <img src="../images/logo_48.png" align="left" style="margin-top:30px">
       </div><br>
       <div style="margin-top: 15px; margin-left: 80px">
         <font size="4" color="#38ACEC" style="font-family:Helvetica Neue; font-weight:100"><b>Main</b>
         </font>
-        <form action="" align="right" >
-          <button class="astext" style="background:none; border:none; margin:0; padding:0">
-          <font size="6" color="#38ACEC" style="font-family:Helvetica Neue; font-weight:100">...</font>
-          </button>
-        </form>
+        
+        <div class="flex-row" style="width: 15em; justify-content: space-between; align-items: baseline;">
+          <div style="overflow: hidden; text-overflow: ellipsis; padding-top: 3px; width: 5em; height: 15px; font-size: 13px; text-rendering: geometricPrecision; margin-bottom: 15px; color: #38ACEC;">0xQ12345678901234567890</div>
+        </div>
       </div>
+
+      <ul style="background-color: black">
+        <a style="text-align: left">QTUM:</a>
+        <a style="text-align: left; margin-left:10px">0.000000</a>
+      </ul>
+
+      <ul style="background-color: black">
+        <a style="text-align: left">USD:</a>
+        <a style="text-align: left; margin-left:22px">0.00</a>
+      </ul>
+      
     </div>
     <div align=right>
       <form action="">
@@ -90,159 +142,93 @@
         <button type="submit" value="Submit" style="margin:20px; background-color:#38ACEC; border:0; height:30px; width:60px; font-family:Helvetica Neue; font-weight:100"><b>SEND</b></button>
       </form>
     </div>
+    <ul>
+      <li style="float:left"><a class="active" href="#transactions">Transactions</a></li>
+      <li style="float:left"><a href="#tokens">Tokens</a></li>
+    </ul>
+    <div class="tx-list" style="background-color: rgb(126, 126, 126); overflow-y: auto; height: 250px; padding: 0px 25px 0px 15px; text-align: center;">
+      <div class="flex-center full-flex-height" style="flex-direction: column; justify-content: center;">
+        <p style="margin-top: 100px;">No transaction history.</p>
+      </div>
+    </div>
+  </body>
 
-  -->
+-->
 
-<!--
-  Actual MetaMask html code
+<body bgcolor="#000000" text="#38ACEC" style="font-family:Helvetica Neue; font-weight:100">
 
+    <head>
+      <style>
+      ul {
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+          overflow: hidden;
+          background-color: #333;
+      }
+      
+      li {
+          float: right;
+      }
+      
+      li a {
+          display: block;
+          color: #38ACEC;
+          text-align: center;
+          padding: 14px 14px;
+          text-decoration: none;
+      }
+      
+      li a:hover {
+          background-color: #111;
+      }
+      </style>
+   </head>
+   <div>
+      <img src="../images/logo_48.png" align="top" style="margin-top:10px">
+    </div>
 
-  <body style="width:357px; height:600px;">
-    <div id="app-content">
-      <div data-reactroot="" class="flex-column full-height" style="overflow: hidden; position: relative; align-items: center;">
-        <div height="38px" class="full-width">
-          <div class="app-header flex-row flex-space-between" style="align-items: center; visibility: visible; background: white; height: 38px; position: relative; z-index: 12;">
-            <div class="left-menu-section" style="display: flex; flex-direction: row; align-items: center;">
-              <img height="24" width="24" src="/images/icon-128.png">
-              <div class="pointer" title="Main Ethereum Network" id="network_component">
-                <div class="network-indicator">
-                  <div class="menu-icon diamond"></div>
-                  <div class="network-name" style="color: rgb(3, 147, 150);">Main Network</div>
-                  <i class="fa fa-caret-down fa-lg"></i>
-                </div>
-              </div>
-            </div>
-            <div style="display: flex; flex-direction: row; align-items: center;">
-              <span>
-                <div class="cursor-pointer color-orange accounts-selector" style="background: url(&quot;images/switch_acc.svg&quot;) center center no-repeat white; height: 25px; width: 25px; transform: scale(0.75); margin-right: 3px;">
-                  <div class="menu-droppo-container" style="margin-left: -238px; margin-top: 38px; min-width: 180px; overflow-y: auto; max-height: 300px; width: 300px; position: fixed; z-index: 11;">
-                    <style>
-                      .menu-droppo-enter {
-                      transition: transform 300ms ease-in-out;
-                      transform: translateY(-200%);
-                      }
+   <div id="container" style="margin-top:30px; margin-left:10px" align="middle">
+      
+      <form action="" align="left">
+        <button class="astext" style="background:none; border:none; margin:0; padding:0">
+        <font size="2" color="#38ACEC" style="font-family:Helvetica Neue; font-weight:100">Back</font>
+        </button>
+      </form>
+     
+      <div style="margin-top: 15px; ">
+        <font size="4" color="#38ACEC" style="font-family:Helvetica Neue; font-weight:100"><b>Main</b>
+        </font>
         
-                      .menu-droppo-enter.menu-droppo-enter-active {
-                      transition: transform 300ms ease-in-out;
-                      transform: translateY(0%);
-                      }
-        
-                      .menu-droppo-leave {
-                      transition: transform 300ms ease-in-out;
-                      transform: translateY(0%);
-                      }
-        
-                      .menu-droppo-leave.menu-droppo-leave-active {
-                      transition: transform 300ms ease-in-out;
-                      transform: translateY(-200%);
-                      }
-                    </style>
-                <span class="css-transition-group"></span>
-                </div>
-              </div>
-            </span>
-            <div class="sandwich-expando" style="padding: 0px; width: 16px; height: 11.8995px; display: flex; flex-direction: column; justify-content: space-between; cursor: pointer;">
-              <div style="height: 2px; width: 100%; border-radius: 100px; background: rgb(247, 146, 30); transition: transform 300ms ease-in-out; transform-origin: 1px 1px 0px; transform: rotate(0deg);">
-              </div>
-              <div style="height: 2px; opacity: 1; width: 100%; border-radius: 100px; background: rgb(247, 146, 30); transition: opacity 300ms ease-in-out;"></div>
-              <div style="height: 2px; width: 100%; border-radius: 100px; background: rgb(247, 146, 30); transition: transform 300ms ease-in-out; transform-origin: 1px 1px 0px; transform: rotate(0deg);">
-              </div>
-            </div>
-          </div>
+        <div class="flex-row" style="width: 15em; justify-content: space-between; align-items: baseline;">
+          <div style="overflow: hidden; text-overflow: ellipsis; padding-top: 3px; width: 5em; height: 15px; font-size: 13px; text-rendering: geometricPrecision; margin-bottom: 15px; color: #38ACEC;">0xQ12345678901234567890</div>
         </div>
       </div>
-      <div class="menu-droppo-container" style="position: absolute; left: 2px; top: 36px; z-index: 11;">
-        <style>
-            .menu-droppo-enter {
-              transition: transform 300ms ease-in-out;
-              transform: translateY(-200%);
-            }
-    
-            .menu-droppo-enter.menu-droppo-enter-active {
-              transition: transform 300ms ease-in-out;
-              transform: translateY(0%);
-            }
-    
-            .menu-droppo-leave {
-              transition: transform 300ms ease-in-out;
-              transform: translateY(0%);
-            }
-    
-            .menu-droppo-leave.menu-droppo-leave-active {
-              transition: transform 300ms ease-in-out;
-              transform: translateY(-200%);
-            }
-          </style><span class="css-transition-group"></span></div><div class="menu-droppo-container" style="position: absolute; right: 2px; top: 38px; z-index: 11;"><style>
-            .menu-droppo-enter {
-              transition: transform 300ms ease-in-out;
-              transform: translateY(-200%);
-            }
-    
-            .menu-droppo-enter.menu-droppo-enter-active {
-              transition: transform 300ms ease-in-out;
-              transform: translateY(0%);
-            }
-    
-            .menu-droppo-leave {
-              transition: transform 300ms ease-in-out;
-              transform: translateY(0%);
-            }
-    
-            .menu-droppo-leave.menu-droppo-leave-active {
-              transition: transform 300ms ease-in-out;
-              transform: translateY(-200%);
-            }
-          </style> 
 
-          
-<!--!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!I AM HERE!!!!!!!!!!!!!!!!!!!!!!!!!-->
+      <ul style="background-color: black">
+        <a style="text-align: left">QTUM:</a>
+        <a style="text-align: left; margin-left:10px">0.000000</a>
+      </ul>
 
-<!--
-          <span class="css-transition-group"></span></div><div class="app-primary from-right" style="width: 100%;"><div class="account-detail-section full-flex-height"><div class="account-data-subsection" style="margin: 0px 20px; flex: 1 0 auto;"><div style="padding-top: 20px; display: flex; justify-content: flex-start; align-items: flex-start;"><div class="identicon-wrapper select-none"><div style="display: flex; align-items: center; justify-content: center; height: 62px; width: 62px; border-radius: 31px; overflow: hidden;"><div style="border-radius: 50px; overflow: hidden; padding: 0px; margin: 0px; width: 62px; height: 62px; display: inline-block;"><svg height="100" version="1.1" width="100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="overflow: hidden; position: relative;"><desc style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Created with Raphaël 2.2.0</desc><defs style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></defs><rect x="0" y="0" width="62" height="62" rx="0" ry="0" fill="#016d8e" stroke="none" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></rect><rect x="0" y="0" width="62" height="62" rx="0" ry="0" fill="#186ff2" stroke="none" transform="matrix(-0.9961,0.0879,-0.0879,-0.9961,65.9113,62.8416)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></rect><rect x="0" y="0" width="62" height="62" rx="0" ry="0" fill="#c81429" stroke="none" transform="matrix(0.8887,0.4585,-0.4585,0.8887,27.9707,-41.3012)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></rect><rect x="0" y="0" width="62" height="62" rx="0" ry="0" fill="#fb1832" stroke="none" transform="matrix(-0.699,0.7151,-0.7151,-0.699,86.6954,75.3812)" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></rect></svg></div></div></div><flex-column style="line-height: 10px; margin-left: 15px; width: 100%;"><div class="name-label"><label class="editing-label"><div class="edit-text">edit</div></label><div style="display: flex; justify-content: flex-start; align-items: center;"><div name="edit" class="font-medium color-forest"><h2 style="max-width: 180px; overflow: hidden; text-overflow: ellipsis; padding: 5px 0px; line-height: 25px;">main</h2></div><span style="margin-right: 8px; margin-left: auto; cursor: pointer;"><i class="fa fa-ellipsis-h" style="margin: 0.5em; font-size: 1.8em;"><div class="menu-droppo-container" style="margin-left: -215px; min-width: 180px; position: fixed; z-index: 11;"><style>
-            .menu-droppo-enter {
-              transition: transform 300ms ease-in-out;
-              transform: translateY(-200%);
-            }
-    
-            .menu-droppo-enter.menu-droppo-enter-active {
-              transition: transform 300ms ease-in-out;
-              transform: translateY(0%);
-            }
-    
-            .menu-droppo-leave {
-              transition: transform 300ms ease-in-out;
-              transform: translateY(0%);
-            }
-    
-            .menu-droppo-leave.menu-droppo-leave-active {
-              transition: transform 300ms ease-in-out;
-              transform: translateY(-200%);
-            }
-          </style></div></i></span></div></div><div class="flex-row" style="width: 15em; justify-content: space-between; align-items: baseline;"><div style="overflow: hidden; text-overflow: ellipsis; padding-top: 3px; width: 5em; height: 15px; font-size: 13px; font-family: &quot;Montserrat Light&quot;; text-rendering: geometricPrecision; margin-bottom: 15px; color: rgb(174, 174, 174);">0xD11b4BE716aF9f71af2E3945C0b6DCBaeaf614e3</div></div></flex-column></div><div class="flex-row" style="justify-content: space-between; align-items: flex-start;"><div class="ether-balance ether-balance-amount" style="line-height: 7px; margin-top: 10px;"><div style="display: inline;"><div class="flex-column"><div class="flex-row" style="align-items: flex-end; line-height: 13px; font-family: &quot;Montserrat Light&quot;; text-rendering: geometricPrecision;"><div style="width: 100%; text-align: right;">2.646</div><div style="color: rgb(174, 174, 174); font-size: 12px; margin-left: 5px;">ETH</div></div><div class="flex-row" style="align-items: flex-end; line-height: 13px; font-family: &quot;Montserrat Light&quot;; text-rendering: geometricPrecision;"><div style="width: 100%; text-align: right; font-size: 12px; color: rgb(51, 51, 51);">1933.05</div><div style="color: rgb(174, 174, 174); margin-left: 5px; font-size: 12px;">USD</div></div></div></div></div><div class="flex-grow"></div><button style="margin-right: 10px;">BUY</button><button style="margin-bottom: 20px; margin-right: 8px;">SEND</button></div></div><section class="tabSection full-flex-height grow-tenx"><div class="flex-row space-around text-transform-uppercase" style="background: rgb(235, 235, 235); color: rgb(174, 174, 174); padding-top: 4px; min-height: 30px;"><div class="inactiveForm pointer">Sent</div><div class="activeForm">Tokens</div></div><div class="full-flex-height" style=""><div style="display: flex; justify-content: space-between; align-items: center; min-height: 70px; padding: 10px;"><span>No tokens found</span><button style="display: flex; height: 40px; padding: 10px; justify-content: center; align-items: center;">ADD TOKEN</button></div><ol class="full-flex-height flex-column" style="overflow-y: auto; display: flex; flex-direction: column;"><style>
-    
-            li.token-cell {
-              display: flex;
-              flex-direction: row;
-              align-items: center;
-              padding: 10px;
-              min-height: 50px;
-            }
-    
-            li.token-cell > h3 {
-              margin-left: 12px;
-            }
-    
-            li.token-cell:hover {
-              background: white;
-              cursor: pointer;
-            }
-    
-          </style><div class="flex-grow"></div></ol></div></section></div></div></div></div>
-        <script src="./scripts/popup.js" type="text/javascript" charset="utf-8"></script>
+      <ul style="background-color: black">
+        <a style="text-align: left">USD:</a>
+        <a style="text-align: left; margin-left:22px">0.00</a>
+      </ul>
       
-    
-    <div class="tooltip bottom" style="transition: opacity 0.4s; left: -500px; top: -500px; opacity: 0;"><div class="tooltip-arrow"></div><div class="tooltip-inner">2.646895 ETH</div></div></body>
+    </div>
+    <h1 style="margin-top:40px" align="middle"><font size="5" style="font-family:Helvetica Neue; font-weight:100">Send QTUM</font></h1>
+    <div id="container" align="center" style="margin-top:30px">
+        <form action="" align="center">
+            <input name="sendaddr" align="center" placeholder="Recipient Address" style="text-align:center; height:30px; width:250px"><br>
+        </form>
+        <div style="margin:30px">
+        <form action="" align="center">
+            <input name="amnt" align="center" placeholder="Amount" style="text-align:center; height:30px; width:250px"><br>
+            <button type="submit" value="Submit" style="margin-top:20px; background-color:#38ACEC; border:0; height:40px; width:100px; font-family:Helvetica Neue; font-weight:100"><b>Send</b></button>
+          </form>
+          </div>
+    </div>
 
-        -->
-
+   
+  
 </html>
